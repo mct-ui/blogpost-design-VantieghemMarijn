@@ -9,8 +9,18 @@ html {
     line-height: 1.5;
     font-family: "droid-serif", "Helvetica Neue", Helvetica, arial, sans-serif;
     color: #5c6366;
-    padding: 48px 24px 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
 
+*+h2{
+    margin-top: 48px;
 }
 @font-face{
     font-family: "Inter Web";
@@ -28,10 +38,7 @@ h3{
     color: #17181A;
 }
 
-body {
-    max-width: 42em;
-    margin: 0 auto;
-}
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -65,6 +72,7 @@ img {
 
 h1 {
     /* font-family: "Times New Roman", serif; */
+    font-family: "Playfair Display";
     font-size: 36px;
     font-weight: normal;
     line-height: 40px;
@@ -152,7 +160,87 @@ a:hover,
 a:focus {
     color: #1abaff;
 }
+    /*
+    component.author
+    */
+.c-author{
+    display: flex;
+    align-items: center;
+}
+.c-author__name,
+.c-author__title{
+    margin-bottom: 0;
+}
+.c-author__name{
+    font-size: 16px;
+    line-height: 24px;
+}
+.c-author__title{
+    font-size: 14px;
+    line-height: 16px;
+    font-family: "Inter Web",Arial, Helvetica, sans-serif;
 
+}
+.c-author__avatar{
+    height: 56px;
+    border-radius: 100%;
+}
+/*
+ component:article
+*/
+.c-article__header,
+.c-article__body{
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+.c-article__header{
+    padding:24px 24px 0;
+}
+.c-article__body{
+    padding: 0 24px;
+}
+
+/*
+utilities max widt
+*/
+.u-max-width-sm{
+    max-width: 36em;
+}
+@media (min-width:992px){
+    .c-author{
+        display: block;
+    }
+    .c-author__avatar{
+        margin-bottom: 16px;
+    }
+}
+@media (min-width:929px){
+    .c-article__body{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .c-article__aside{
+        width: 25%;
+    }
+    .c-article__content{
+        width: 75%;
+    }
+    .c-article__aside{
+        padding-right: 24px;
+    }
+}
+@media (min-width: 768px){
+    .c-article__header{
+        padding: 48px 48px 24px;
+    }
+    .c-article__body{
+        padding: 24px 48px;
+    }
+    .c-article__aside{
+        margin-bottom: 48px;
+    }
+}
 /* Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {}
@@ -160,9 +248,6 @@ a:focus {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-    html {
-        padding: 48px 48px 24px;
-    }
     h1 {
         font-size: 58px;
         line-height: 64px;
